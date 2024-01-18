@@ -153,11 +153,11 @@ $units: (px, cm, mm, in, pc, pt, em, rem, vh, vw, vmin, vmax, svh, svw, dvh, dvw
 
     @each $unit in $units {
         @if ($unit != '%') {
-            .ws-#{$size} {
+            .ws-#{$unit}-#{$size} {
                 word-spacing: #{$size} + #{$unit};
             }
 
-            .ls-#{$size} {
+            .ls-#{$unit}-#{$size} {
                 letter-spacing: #{$size} + #{$unit};
             }
 
@@ -171,6 +171,22 @@ $units: (px, cm, mm, in, pc, pt, em, rem, vh, vw, vmin, vmax, svh, svw, dvh, dvw
 
             .h-#{$unit}-#{$size} {
                 height: #{$size} + #{$unit};
+            }
+
+            .minw-#{$unit}-#{$size} {
+                min-width: #{$size} + #{$unit};
+            }
+
+            .minh-#{$unit}-#{$size} {
+                min-height: #{$size} + #{$unit};
+            }
+
+            .maxw-#{$unit}-#{$size} {
+                max-width: #{$size} + #{$unit};
+            }
+
+            .maxh-#{$unit}-#{$size} {
+                max-height: #{$size} + #{$unit};
             }
 
             .top-#{$unit}-#{$size} {
