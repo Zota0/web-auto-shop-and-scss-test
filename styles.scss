@@ -1,0 +1,454 @@
+$sizes: (
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15,
+    16,
+    18,
+    20,
+    22,
+    23,
+    24,
+    25,
+    26,
+    28,
+    30,
+    32,
+    34,
+    36,
+    38,
+    40,
+    42,
+    44,
+    46,
+    48,
+    50,
+    52,
+    55,
+    60,
+    62,
+    64,
+    65,
+    66,
+    67,
+    68,
+    70,
+    72,
+    74,
+    75,
+    80,
+    82,
+    84,
+    86,
+    88,
+    90,
+    92,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    125,
+    150,
+    175,
+    200,
+    250,
+    300,
+    400,
+    500,
+    600,
+    625,
+    700,
+    750,
+    800,
+    900,
+    1000,
+    1250,
+    1500,
+    1750,
+    1800,
+    1900,
+    1920
+);
+
+$colors: (none, blue, red, green, blueviolet, violet, magenta, darkblue, cyan, aquamarine, darkred, lightblue, pink, white, gray, lightgray, black, yellowgreen, greenyellow, yellow, lightyellow, lightgreen);
+
+$overflows: (hidden, clip, visible);
+
+$pos-types: (absolute, relative, fixed, static, sticky, -webkit-sticky, -ms-page, inherit, initial);
+
+$dis-types: (inline, inline-block, flex, block, grid, flexbox);
+
+$units: (px, cm, mm, in, pc, pt, em, rem, vh, vw, vmin, vmax, svh, svw, dvh, dvw, lvh, lvw, qvh, qvw, '%');
+
+@each $overflow in $overflows {
+    .overflow-#{$overflow} {
+        overflow: #{$overflow};
+    }
+}
+
+@each $pos in $pos-types {
+    .pos-#{$pos} {
+        position: $pos;
+    }
+}
+
+@each $color in $colors {
+    .c-#{$color} {
+        color: $color;
+    }
+
+    .bgc-#{$color} {
+        background-color: $color;
+    }
+
+    .bc-#{$color} {
+        border-color: $color;
+    }
+
+    .oc-#{$color} {
+        outline-color: $color;
+    }
+}
+
+@each $size in $sizes {
+    .tabs-#{$size} {
+        tab-size: #{$size};
+    }
+
+    .o-#{$size} {
+        opacity: #{$size};
+    }
+
+    .f-bl-#{$size} {
+        filter: blur(#{$size});
+    }
+
+    .f-br-#{$size} {
+        filter: brightness(#{$size} + '%');
+    }
+
+    .f-co-#{$size} {
+        filter: contrast(#{$size} + '%');
+    }
+
+    .f-se-#{$size} {
+        filter: sepia((#{$size} + '%'));
+    }
+
+    .zid-#{$size} {
+        z-index: #{$size};
+    }
+
+    @each $unit in $units {
+        @if ($unit != '%') {
+            .ws-#{$size} {
+                word-spacing: #{$size} + #{$unit};
+            }
+
+            .ls-#{$size} {
+                letter-spacing: #{$size} + #{$unit};
+            }
+
+            .fs-#{$unit}-#{$size} {
+                font-size: #{$size} + #{$unit};
+            }
+
+            .w-#{$unit}-#{$size} {
+                width: #{$size} + #{$unit};
+            }
+
+            .h-#{$unit}-#{$size} {
+                height: #{$size} + #{$unit};
+            }
+
+            .top-#{$unit}-#{$size} {
+                top: #{$size} + #{$unit};
+            }
+
+            .right-#{$unit}-#{$size} {
+                right: #{$size} + #{$unit};
+            }
+
+            .bottom-#{$unit}-#{$size} {
+                bottom: #{$size} + #{$unit};
+            }
+
+            .left-#{$unit}-#{$size} {
+                left: #{$size} + #{$unit};
+            }
+
+            .bw-#{$unit}-#{$size} {
+                border-width: #{$size} + #{$unit};
+            }
+
+            .br-#{$unit}-#{$size} {
+                border-radius: #{$size} + #{$unit};
+            }
+
+            .ow-#{$unit}-#{$size} {
+                outline-width: #{$size} + #{$unit};
+            }
+
+            .oo-#{$unit}-#{$size} {
+                outline-offset: #{$size} + #{$unit};
+            }
+
+            .bgs-#{$unit}-#{$size} {
+                background-size: #{$size} + #{$unit};
+            }
+
+            .m-#{$unit}-#{$size} {
+                margin: #{$size} + #{$unit};
+            }
+
+            .mt-#{$unit}-#{$size} {
+                margin-top: #{$size} + #{$unit};
+            }
+
+            .mr-#{$unit}-#{$size} {
+                margin-right: #{$size} + #{$unit};
+            }
+
+            .mb-#{$unit}-#{$size} {
+                margin-bottom: #{$size} + #{$unit};
+            }
+
+            .ml-#{$unit}-#{$size} {
+                margin-left: #{$size} + #{$unit};
+            }
+
+            .p-#{$unit}-#{$size} {
+                padding: #{$size} + #{$unit};
+            }
+
+            .pt-#{$unit}-#{$size} {
+                padding-top: #{$size} + #{$unit};
+            }
+
+            .pr-#{$unit}-#{$size} {
+                padding-right: #{$size} + #{$unit};
+            }
+
+            .pb-#{$unit}-#{$size} {
+                padding-bottom: #{$size} + #{$unit};
+            }
+
+            .pl-#{$unit}-#{$size} {
+                padding-left: #{$size} + #{$unit};
+            }
+
+            .rgap-#{$unit}-#{$size} {
+                row-gap: #{$size} + #{$unit};
+            }
+
+            .cgap-#{$unit}-#{$size} {
+                column-gap: #{$size} + #{$unit};
+            }
+
+            .gap-#{$unit}-#{$size} {
+                gap: #{$size} + #{$unit};
+            }
+        }
+        @if ($unit == '%') {
+            .fs-per-#{$size} {
+                font-size: #{$size} + '%';
+            }
+
+            .w-per-#{$size} {
+                width: #{$size} + '%';
+            }
+
+            .h-per-#{$size} {
+                height: #{$size} + '%';
+            }
+
+            .top-per-#{$size} {
+                top: #{$size} + '%';
+            }
+
+            .right-per-#{$size} {
+                right: #{$size} + '%';
+            }
+
+            .bottom-per-#{$size} {
+                bottom: #{$size} + '%';
+            }
+
+            .left-per-#{$size} {
+                left: #{$size} + '%';
+            }
+
+            .bw-per-#{$size} {
+                border-width: #{$size} + '%';
+            }
+
+            .br-per-#{$size} {
+                border-radius: #{$size} + '%';
+            }
+
+            .ow-per-#{$size} {
+                outline-width: #{$size} + '%';
+            }
+
+            .oo-per-#{$size} {
+                outline-offset: #{$size} + '%';
+            }
+
+            .bgs-per-#{$size} {
+                background-size: #{$size} + '%';
+            }
+
+            .m-per-#{$size} {
+                margin: #{$size} + '%';
+            }
+
+            .mt-per-#{$size} {
+                margin-top: #{$size} + '%';
+            }
+
+            .mr-per-#{$size} {
+                margin-right: #{$size} + '%';
+            }
+
+            .mb-per-#{$size} {
+                margin-bottom: #{$size} + '%';
+            }
+
+            .ml-per-#{$size} {
+                margin-left: #{$size} + '%';
+            }
+
+            .p-per-#{$size} {
+                padding: #{$size} + '%';
+            }
+
+            .pt-per-#{$size} {
+                padding-top: #{$size} + '%';
+            }
+
+            .pr-per-#{$size} {
+                padding-right: #{$size} + '%';
+            }
+
+            .pb-per-#{$size} {
+                padding-bottom: #{$size} + '%';
+            }
+
+            .pl-per-#{$size} {
+                padding-left: #{$size} + '%';
+            }
+        }
+    }
+}
+
+$auandno: (auto, none);
+
+@each $andno in $auandno {
+    .m-#{$andno} {
+        margin: #{$andno};
+    }
+
+    .mt-#{$andno} {
+        margin: #{$andno};
+    }
+
+    .mr-#{$andno} {
+        margin: #{$andno};
+    }
+
+    .mb-#{$andno} {
+        margin: #{$andno};
+    }
+
+    .ml-#{$andno} {
+        margin: #{$andno};
+    }
+
+    .p-#{$andno} {
+        margin: #{$andno};
+    }
+
+    .pt-#{$andno} {
+        margin: #{$andno};
+    }
+
+    .pr-#{$andno} {
+        margin: #{$andno};
+    }
+
+    .pb-#{$andno} {
+        margin: #{$andno};
+    }
+
+    .pl-#{$andno} {
+        margin: #{$andno};
+    }
+}
+
+$textdecorations: (none, underline, overline, line-through);
+
+@each $textdecoration in $textdecorations {
+    .dec-#{$textdecorations} {
+        text-decoration: #{$textdecoration};
+    }
+}
+
+$botypes: (solid, dotted, dashed, double, groove, ridge, inset, outset);
+
+@each $botype in $botypes {
+    .bs-#{$botype} {
+        border-style: #{$botype};
+    }
+
+    .os-#{$botype} {
+        outline-style: #{$botype};
+    }
+}
+
+$aligns: (left, bottom, center, right, top);
+
+@each $align in $aligns {
+    .ta-#{$align} {
+        text-align: #{$align};
+    }
+
+    .bgo-#{$align}-#{$align} {
+        background-origin: #{$align} #{$align};
+    }
+}
+
+$text-aligns: (start, end, justify, inherit);
+
+@each $text-align in $text-aligns {
+    .ta-#{$text-align} {
+        text-align: #{$text-align};
+    }
+}
+
+$attachments: (fixed, local, scroll, normal, inherit, initial);
+
+@each $attach in $attachments {
+    .bgat-#{$attach} {
+        background-attachment: #{$attach};
+    }
+}
+
+$fontweights: (100, 200, 300, 400, 500, 600, 700, 800, 900, initial, inherit);
+
+@each $fontweight in $fontweights {
+    .fw-#{$fontweight} {
+        font-weight: #{$fontweight};
+    }
+}
