@@ -3,6 +3,11 @@
     <head>
         <?php
             include 'ConnectSQL.php';
+            
+            $EncryptPath = 'https://github.com/Zota0/web-auto-shop-and-scss-test/blob/main/Encrypt.py';
+            $Encrypt = shell_exec('python $EncryptPath');
+            echo "PHP -";
+
             $connect = connectToDatabase($dbServerName, $dbUsername, $dbPassword, $dbName, $dbPort);
         ?>
     </head>
@@ -10,7 +15,7 @@
     <body> 
         <br>
         <?php
-
+            echo $encrypt;
             $Lang = 'pl';
             $FirstName = $_POST['firstname'];
             $LastName = $_POST['lastname'];
@@ -79,11 +84,6 @@
             <input class='ta-center ml-px-10 w-px-200' type='submit' value='Create' name='create'>
 
         </form>
-
-        <?php 
-            echo '<br>'.'<center>'.print_r($userData, true).'</center>'.'<br>';
-        ?>
-
         <br>
 
         
