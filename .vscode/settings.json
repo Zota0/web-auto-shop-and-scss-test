@@ -4,5 +4,21 @@
     "godotFiles.clarifyArrays.color": true,
     "cSpell.enableFiletypes": [
         "!scss"
+    ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 255,
+            "server": "localhost",
+            "port": 4306,
+            "driver": "MariaDB",
+            "name": "store",
+            "database": "store",
+            "username": "php",
+            "password": ""
+        }
     ]
 }
