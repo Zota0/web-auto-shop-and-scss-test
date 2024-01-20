@@ -3,10 +3,7 @@
     <head>
         <?php
             include 'ConnectSQL.php';
-            
-            $EncryptPath = 'https://github.com/Zota0/web-auto-shop-and-scss-test/blob/main/Encrypt.py';
-            $Encrypt = shell_exec('python $EncryptPath');
-            echo "PHP -";
+            include 'Encryption.php';
 
             $connect = connectToDatabase($dbServerName, $dbUsername, $dbPassword, $dbName, $dbPort);
         ?>
@@ -15,7 +12,11 @@
     <body> 
         <br>
         <?php
-            echo $encrypt;
+
+            Encrypt("y6", "Pociag");
+            
+            echo "<br>";
+
             $Lang = 'pl';
             $FirstName = $_POST['firstname'];
             $LastName = $_POST['lastname'];

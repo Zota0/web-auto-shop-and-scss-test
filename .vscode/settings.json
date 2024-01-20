@@ -3,6 +3,7 @@
     "php.version": "8.2",
     "godotFiles.clarifyArrays.color": true,
     "cSpell.enableFiletypes": [
+        "!php",
         "!scss"
     ],
     "sqltools.connections": [
