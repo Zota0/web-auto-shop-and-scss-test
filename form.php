@@ -3,7 +3,6 @@
     <head>
         <?php
             include 'ConnectSQL.php';
-            include 'Encryption.php';
 
             $connect = connectToDatabase($dbServerName, $dbUsername, $dbPassword, $dbName, $dbPort);
         ?>
@@ -12,11 +11,7 @@
     <body> 
         <br>
         <?php
-
-            Encrypt("y6", "Pociag");
-            
             echo "<br>";
-
             $Lang = 'pl';
             $FirstName = $_POST['firstname'];
             $LastName = $_POST['lastname'];
